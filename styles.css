@@ -1,101 +1,143 @@
-/* General Reset */
-* {
-    margin: 0;
-    padding: 0;
-    box-sizing: border-box;
+@import url('https://rsms.me/inter/inter-ui.css');
+  ::selection {
+    background: #2D2F36;
   }
-  
-  /* Body Styling */
+  ::-webkit-selection {
+    background: #2D2F36;
+  }
+  ::-moz-selection {
+    background: #2D2F36;
+  }
   body {
-    font-family: 'Arial', sans-serif;
-    display: flex;
-    justify-content: center;
-    align-items: center;
+    background-image: url(assets/top-view-burgers-fries-cutting-board-with-copy-space.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
     height: 100vh;
-    background-color: #F6E5D5; /* Soft cream background */
+    font-family: 'Inter UI', sans-serif;
+    margin: 0;
+    padding: 20px;
+    
   }
-  
-  /* Main Container */
-  .login-page {
-    display: flex;
-    width: 80%;
-    height: 70%;
-    border-radius: 12px;
-    overflow: hidden;
-    box-shadow: 0px 8px 16px rgba(0, 0, 0, 0.2);
-  }
-  
-  /* Left Section - Image */
-  .image-section {
-    flex: 1;
-    background-color: #FFD166; /* Warm yellow background */
-    display: flex;
-    justify-content: center;
-    align-items: center;
-  }
-  
-  .burger-image {
-    max-width: 90%;
-    height: auto;
-  }
-  
-  /* Right Section - Form */
-  .form-section {
-    flex: 1;
-    background-color: #FFF8E1; /* Cream color */
-    padding: 2rem;
+  .page {
+    opacity: 0.8;
     display: flex;
     flex-direction: column;
-    justify-content: center;
-    align-items: center;
+    height: calc(100% - 40px);
+    position: absolute;
+    place-content: center;
+    width: calc(100% - 40px);
   }
-  
-  /* Logo */
-  .logo {
-    font-size: 2.5rem;
-    font-weight: bold;
-    color: #8D5524; /* Brown */
-    margin-bottom: 2rem;
-    font-family: 'Comic Sans MS', sans-serif; /* Fun and playful font */
+  @media (max-width: 767px) {
+    .page {
+      height: auto;
+      margin-bottom: 20px;
+      padding-bottom: 20px;
+    }
   }
-  
-  /* Form Styling */
-  .login-form {
+  .container {
+    display: flex;
+    height: 320px;
+    margin: 0 auto;
+    width: 640px;
+  }
+  @media (max-width: 767px) {
+    .container {
+      flex-direction: column;
+      height: 630px;
+      width: 320px;
+    }
+  }
+  .left {
+    background: white;
+    height: calc(100% - 40px);
+    top: 20px;
+    position: relative;
+    width: 50%;
+  }
+  @media (max-width: 767px) {
+    .left {
+      height: 100%;
+      left: 20px;
+      width: calc(100% - 40px);
+      max-height: 270px;
+    }
+  }
+  .login {
+    font-size: 50px;
+    font-weight: 900;
+    margin: 50px 40px 40px;
+  }
+  .eula {
+    color: #999;
+    font-size: 14px;
+    line-height: 1.5;
+    margin: 40px;
+  }
+  .right {
+    background: #FFD166;
+    box-shadow: 0px 0px 40px 16px rgba(0,0,0,0.22);
+    color: #000000;
+    position: relative;
+    width: 50%;
+  }
+  @media (max-width: 767px) {
+    .right {
+      flex-shrink: 0;
+      height: 100%;
+      width: 100%;
+      max-height: 350px;
+    }
+  }
+  svg {
+    position: absolute;
+    width: 320px;
+  }
+  path {
+    fill: none;
+    stroke: url(#linearGradient);;
+    stroke-width: 4;
+    stroke-dasharray: 240 1386;
+  }
+  .form {
+    margin: 40px;
+    position: absolute;
+  }
+  label {
+    color:  #000000;
+    display: block;
+    font-size: 14px;
+    height: 16px;
+    margin-top: 20px;
+    margin-bottom: 5px;
+  }
+  input {
+    background-color: #ffffff91;
+    border-radius: 25px;
+    padding-left: 15px;
+    border: 0;
+    color: #000000;
+    font-size: 20px;
+    height: 30px;
+    line-height: 30px;
+    outline: none !important;
+    width: 220px;
+  }
+  input::-moz-focus-inner { 
+    border: 0; 
+  }
+  #submit {
+    background-color: #E63946;
+    color: #ffffff;
     width: 100%;
-    max-width: 300px;
-    display: flex;
-    flex-direction: column;
+    margin-top: 40px;
+    transition: color 300ms;
   }
-  
-  .login-form label {
-    font-size: 1rem;
-    color: #333;
-    margin-bottom: 0.5rem;
+  #submit:focus {
+    color: #f2f2f2;
   }
-  
-  .login-form input {
-    height: 40px;
-    border: none;
-    border-radius: 20px;
-    background-color: #D3B8A2; /* Soft brown for inputs */
-    padding: 0 1rem;
-    margin-bottom: 1rem;
-    font-size: 1rem;
+  #submit:active {
+    color: #d0d0d2;
   }
-  
-  .login-form button {
-    height: 40px;
-    border: none;
-    border-radius: 20px;
-    background-color: #E63946; /* Bright red for button */
-    color: #FFF;
-    font-size: 1rem;
-    font-weight: bold;
-    cursor: pointer;
-    transition: background 0.3s;
-  }
-  
-  .login-form button:hover {
-    background-color: #C32F3A; /* Slightly darker red on hover */
-  }
+   
   

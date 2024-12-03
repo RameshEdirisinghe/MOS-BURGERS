@@ -1,28 +1,35 @@
 <!DOCTYPE html>
 <html lang="en">
+
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
   <title>Burger Shop Login</title>
   <link rel="stylesheet" href="styles.css">
 </head>
+
 <body>
-  <div class="login-page">
-    <!-- Left Section -->
-    <div class="image-section">
-      <img src="assets/burger.png" alt="Burger" class="burger-image">
-    </div>
-    <!-- Right Section -->
-    <div class="form-section">
-      <h1 class="logo">MOS BURGERS</h1>
-      <form class="login-form">
-        <label for="email">Email</label>
-        <input type="email" id="email" placeholder="Enter your email" required>
-        <label for="password">Password</label>
-        <input type="password" id="password" placeholder="Enter your password" required>
-        <button type="submit">Login</button>
-      </form>
+  <div class="page">
+    <div class="container">
+      <div class="right">
+
+        <div class="form">
+          <label for="email">Email</label>
+          <input type="email" id="email" class="emailInput">
+          <label for="password">Password</label>
+          <input type="password" id="password" class="passwordInput">
+          <input type="submit" id="submit" value="Submit">
+        </div>
+      </div>
+      <div class="left">
+        <div class="login">Login</div>
+        <div class="eula">By logging in you agree to the ridiculously long terms that you didn't bother to read</div>
+      </div>
+      
     </div>
   </div>
+
+ 
 </body>
+
 </html>
