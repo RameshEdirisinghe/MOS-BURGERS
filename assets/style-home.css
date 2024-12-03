@@ -7,7 +7,10 @@
   body {
     font-family: 'Arial', sans-serif;
     height: 100vh;
-    background-image: url();
+    background-image: url(freepik-export-20241203051447EIaJ.jpg);
+    background-position: center;
+    background-repeat: no-repeat;
+    background-size: cover;
   }
 
 
@@ -20,6 +23,7 @@
     overflow: hidden;
     background-color: #2e2d2d;
     width: 100%;
+    opacity: 0.6;
   }
   .nav-link{
     float: left;
@@ -46,7 +50,14 @@
     
   }
   .grid-1{
-    background-color: aqua;
+    background-color: #000000;
+    opacity: 0.5;
+    height: 300px;
+    border-radius: 25px;  
+    color: white;  
+    padding-left: 20px;
+    padding-top: 20px;
+    font-size: 40px;
   }
   .grid-2{
     

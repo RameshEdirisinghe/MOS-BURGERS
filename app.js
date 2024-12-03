@@ -1,49 +1,17 @@
-var current = null;
-document.querySelector('#email').addEventListener('focus', function(e) {
-  if (current) current.pause();
-  current = anime({
-    targets: 'path',
-    strokeDashoffset: {
-      value: 0,
-      duration: 700,
-      easing: 'easeOutQuart'
-    },
-    strokeDasharray: {
-      value: '240 1386',
-      duration: 700,
-      easing: 'easeOutQuart'
+function login(){
+    const adminUsername = "admin";
+    const adminPassword = "admin1234";
+
+    const cashierUsername = "cashier";
+    const cashiePassword = "cashier1234";
+
+    let inputusername = document.getElementById("email").value;
+    let inputPassword = document.getElementById("password").value;
+
+    if (inputusername==adminUsername && adminPassword==inputPassword) {
+        window.location.assign("home-Admin.html");
     }
-  });
-});
-document.querySelector('#password').addEventListener('focus', function(e) {
-  if (current) current.pause();
-  current = anime({
-    targets: 'path',
-    strokeDashoffset: {
-      value: -336,
-      duration: 700,
-      easing: 'easeOutQuart'
-    },
-    strokeDasharray: {
-      value: '240 1386',
-      duration: 700,
-      easing: 'easeOutQuart'
+    else if(cashierUsername==inputusername && cashiePassword==inputPassword){
+        window.location.assign("home-Admin.html");
     }
-  });
-});
-document.querySelector('#submit').addEventListener('focus', function(e) {
-  if (current) current.pause();
-  current = anime({
-    targets: 'path',
-    strokeDashoffset: {
-      value: -730,
-      duration: 700,
-      easing: 'easeOutQuart'
-    },
-    strokeDasharray: {
-      value: '530 1386',
-      duration: 700,
-      easing: 'easeOutQuart'
-    }
-  });
-});
+}

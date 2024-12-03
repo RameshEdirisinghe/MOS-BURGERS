@@ -126,12 +126,15 @@
   input::-moz-focus-inner { 
     border: 0; 
   }
-  #submit {
+  .submit {
     background-color: #E63946;
     color: #ffffff;
     width: 100%;
     margin-top: 40px;
     transition: color 300ms;
+  }
+  .submit:hover{
+    background-color: #ff0015;
   }
   #submit:focus {
     color: #f2f2f2;
