@@ -432,6 +432,7 @@ label.logo {
 .navigation {
   float: right;
   background-color: #f9f6eb;
+ 
   width: 100%;
   border-radius: 25px 25px 0px 0px;
   border-bottom: 5px solid hsl(256, 12%, 12%);
@@ -454,8 +455,8 @@ nav ul li a {
 
 a.active,
 a:hover {
-  background-color: #EFE5D7;
-  color: black;
+  background-color: hsl(256, 12%, 12%);
+  color: rgb(255, 255, 255);
   transition: .5s;
 }
 
@@ -517,7 +518,7 @@ a:hover {
   a:hover,
   a.active {
     background: none;
-    color: #0082e6;
+    color: #000000;
   }
 
   #check:checked~ul {
@@ -617,7 +618,7 @@ section {
  .wrapper{
   display: flex;
   margin-left: 80px;
-  
+  height: 100vh;
  
  }
  .card-box{
@@ -626,11 +627,13 @@ section {
   /* grid-template-columns: repeat(3,1fr); */
   justify-content:space-around;
   flex-wrap: wrap;
+  width: 3000px;
 
  }
  .cart-Box{
   display: flex;
   width: 1000px;
+  height: 900px;
   background-color: #f9f6eb;
  }
  .row{

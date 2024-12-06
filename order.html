@@ -28,7 +28,7 @@
                         <span class="link-text" style="color: azure;">MOS Burgers</span>
                     </li>
                     <li class="navbar-item flexbox-left">
-                        <a class="navbar-item-inner flexbox-left">
+                        <a class="navbar-item-inner flexbox-left" onclick="burger()">
                             <div class="navbar-item-inner-icon-wrapper flexbox">
                                 <!-- <ion-icon name="search-outline"></ion-icon> -->
                                 <img class="sideMenuIcon" src="assets/burger icon.png" alt="">
@@ -37,7 +37,7 @@
                         </a>
                     </li>
                     <li class="navbar-item flexbox-left">
-                        <a class="navbar-item-inner flexbox-left">
+                        <a class="navbar-item-inner flexbox-left" onclick="submarine()">
                             <div class="navbar-item-inner-icon-wrapper flexbox">
                                 <img class="sideMenuIcon" src="assets/Submarines icon.png" alt="">
                             </div>
@@ -83,7 +83,7 @@
     </div>
 
     <div class="wrapper">
-        <div class="card-box">
+        <div class="card-box" id="card-box">
             <div class="row">
                 <nav>
 
@@ -101,11 +101,11 @@
             <div class="card">
                 <div class="card-img"><img src="assets/delicious-burgers-with-bright-lights.jpg" style="height: 100px;" class="card-img-sc" alt=""></div>
                 <div class="card-info">
-                    <p class="text-title">Product title </p>
-                    <p class="text-body">Product description and details</p>
+                    <p class="text-title">BaconCheeseBurger</p>
+                    <p class="text-body">classic cheeseburger and add delicious crunchy</p>
                 </div>
                 <div class="card-footer">
-                    <span class="text-title">$499.49</span>
+                    <span class="text-title">Rs. 1,999</span>
                     <div class="card-button">
                         <svg class="svg-icon" viewBox="0 0 20 20">
                             <path
@@ -124,11 +124,11 @@
             <div class="card">
                 <div class="card-img"><img src="assets/high-angle-burgers-with-fries-sauce-beer-with-copy-space.jpg" style="height: 100px;" class="card-img-sc" alt=""></div>
                 <div class="card-info">
-                    <p class="text-title">Product title </p>
-                    <p class="text-body">Product description and details</p>
+                    <p class="text-title">Turkey Burger</p>
+                    <p class="text-body">The turkey sandwich inspired the turkey burger</p>
                 </div>
                 <div class="card-footer">
-                    <span class="text-title">$499.49</span>
+                    <span class="text-title">Rs. 899</span>
                     <div class="card-button">
                         <svg class="svg-icon" viewBox="0 0 20 20">
                             <path
@@ -147,11 +147,11 @@
             <div class="card">
                 <div class="card-img"><img src="assets/front-view-yummy-french-fries-with-cheeseburgers-dark-background-snack-dish-fast-food-sandwich-toast-burgers-dinner.jpg" style="height: 100px;" class="card-img-sc" alt=""></div>
                 <div class="card-info">
-                    <p class="text-title">Product title </p>
-                    <p class="text-body">Product description and details</p>
+                    <p class="text-title">Lamb Burger</p>
+                    <p class="text-body">For those who love lamb meat</p>
                 </div>
                 <div class="card-footer">
-                    <span class="text-title">$499.49</span>
+                    <span class="text-title">Rs. 2,199</span>
                     <div class="card-button">
                         <svg class="svg-icon" viewBox="0 0 20 20">
                             <path
@@ -170,11 +170,11 @@
             <div class="card">
                 <div class="card-img"><img src="assets/view-delicious-burgers-with-buns-cheese (1).jpg" style="height: 100px;" class="card-img-sc" alt=""></div>
                 <div class="card-info">
-                    <p class="text-title">Product title </p>
-                    <p class="text-body">Product description and details</p>
+                    <p class="text-title">Beef burger</p>
+                    <p class="text-body">Classic burger with juicy beef patties</p>
                 </div>
                 <div class="card-footer">
-                    <span class="text-title">$499.49</span>
+                    <span class="text-title">Rs. 1,330</span>
                     <div class="card-button">
                         <svg class="svg-icon" viewBox="0 0 20 20">
                             <path
@@ -193,11 +193,11 @@
             <div class="card">
                 <div class="card-img"><img src="assets/side-view-chicken-burgers-with-french-fries-ketchup-mayonnaise-board.jpg" style="height: 100px;" class="card-img-sc" alt=""></div>
                 <div class="card-info">
-                    <p class="text-title">Product title </p>
-                    <p class="text-body">Product description and details</p>
+                    <p class="text-title">Veggie Burger</p>
+                    <p class="text-body">veggie burger made with plant-based ingredients</p>
                 </div>
                 <div class="card-footer">
-                    <span class="text-title">$499.49</span>
+                    <span class="text-title">Rs. 650</span>
                     <div class="card-button">
                         <svg class="svg-icon" viewBox="0 0 20 20">
                             <path
@@ -262,11 +262,11 @@
             <div class="card">
                 <div class="card-img"><img src="assets/big-tasty-burgers.jpg" style="height: 100px;" class="card-img-sc" alt=""></div>
                 <div class="card-info">
-                    <p class="text-title">Product title </p>
-                    <p class="text-body">Product description and details</p>
+                    <p class="text-title">Onion burger</p>
+                    <p class="text-body">onion burger with smashing onions into a beef patty</p>
                 </div>
                 <div class="card-footer">
-                    <span class="text-title">$499.49</span>
+                    <span class="text-title">Rs. 980</span>
                     <div class="card-button">
                         <svg class="svg-icon" viewBox="0 0 20 20">
                             
@@ -455,6 +455,7 @@
         </div>
     </div>
    
+    <script src="Js/orders.js"></script>
 </body>
 
 </html>
