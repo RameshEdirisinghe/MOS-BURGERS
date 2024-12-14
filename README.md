@@ -36,7 +36,7 @@ Once the project is set up, you can:
 
 Here are some screenshots of the **MOS Burger** system in action:
 
-![Home Page Screenshot](images/home.png)  
+![Home Page Screenshot](ScreenshotHome.png)  
 *Home Page*
 
 ![Order Management Screenshot](images/order-management.png)  
