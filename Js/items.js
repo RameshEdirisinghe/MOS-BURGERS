@@ -199,7 +199,7 @@ document.addEventListener("DOMContentLoaded", function() {
 
     searchBtn.addEventListener('click', function() {
         const searchTerm = searchBar.value.toLowerCase();
-        const filteredItems = burgerItems.filter(item => 
+        const filteredItems = allmeals.filter(item => 
             item.name.toLowerCase().includes(searchTerm)
         );
         renderItems(filteredItems); 
