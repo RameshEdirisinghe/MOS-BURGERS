@@ -48,7 +48,7 @@ let allmeals = [{
     price: 1550
 },
 {
-    img: "assets/big-tasty-burgers.jpg",
+    img: "assets/front-view-burger-fries-plate.jpg",
     name: "Onion burger",
     Id: "008",
     Dis: "onion burger with smashing onions into a beef patty",
@@ -69,39 +69,39 @@ let allmeals = [{
     price: 1550
 },
 {
-    img: "assets/front-view-burgers-stand.jpg",
-    name: "chile cheeseburger",
+    img: "assets/crispy-french-fries-with-ketchup-mayonnaise.jpg",
+    name: "Fries",
     Id: "011",
-    Dis: "is a Mexican variation of a classic burger",
-    price: 1550
+    Dis: "French fries are served hot, either soft or crispy",
+    price: 650
 },
 {
-    img: "assets/front-view-burgers-stand.jpg",
-    name: "chile cheeseburger",
+    img: "assets/french-fries-portion-ai-generated-image.jpg",
+    name: "Jambo Fries",
     Id: "012",
-    Dis: "is a Mexican variation of a classic burger",
-    price: 1550
+    Dis: "French fries are served hot, either soft or crispy",
+    price: 950
 },
 {
-    img: "assets/front-view-burgers-stand.jpg",
-    name: "chile cheeseburger",
+    img: "assets/2321138.jpg",
+    name: "Pepsi",
     Id: "013",
-    Dis: "is a Mexican variation of a classic burger",
-    price: 1550
+    Dis: "Pepsi is a carbonated soft drink with a cola flavor",
+    price: 250
 },
 {
-    img: "assets/front-view-burgers-stand.jpg",
-    name: "chile cheeseburger",
+    img: "assets/pexels-karolina-grabowska-4389675.jpg",
+    name: "Coke",
     Id: "013",
-    Dis: "is a Mexican variation of a classic burger",
-    price: 1550
+    Dis: "Coke, is a cola soft drink manufactured by the Coca-Cola Company",
+    price: 250
 },
 {
-    img: "assets/front-view-burgers-stand.jpg",
-    name: "chile cheeseburger",
-    Id: "013",
-    Dis: "is a Mexican variation of a classic burger",
-    price: 1550
+    img: "assets/istockphoto-458735615-612x612.jpg",
+    name: "Red Bull",
+    Id: "800",
+    Dis: "Red Bull is a brand of energy drinks ",
+    price: 700
 }]
 
 let totalAmount =0;
@@ -206,7 +206,7 @@ let burgers = [{
     price: 1550
 },
 {
-    img: "assets/big-tasty-burgers.jpg",
+    img: "assets/front-view-burger-fries-plate.jpg",
     name: "Onion burger",
     Id: "008",
     Dis: "onion burger with smashing onions into a beef patty",

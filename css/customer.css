@@ -1,0 +1,97 @@
+body {
+    font-family: Arial, sans-serif;
+    margin: 20px;
+    background-image: url(../assets/burger-with-melter-cheese-steak-dark-space.jpg);
+    background-position: center;
+    background-size: cover;
+    background-repeat: no-repeat;
+    height: 100vh;
+}
+
+h1 {
+    text-align: center;
+    color: #ffffff;
+    font-weight: bolder;
+    background-color: #9a9a9991;
+    padding-top: 5px;
+    padding-bottom: 5px;
+    opacity: 0.8;
+}
+
+.form-container {
+    margin-bottom: 20px;
+    display: flex;
+    justify-content: space-between;
+    opacity: 0.8;
+    flex-wrap: wrap;
+    gap: 10px;
+    background: #9a9a9991;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+input[type="text"], input[type="date"], input[type="number"] {
+    padding: 10px;
+    background-color: #fbf3dc;
+    border: 1px solid #ccc;
+    border-radius: 5px;
+    width: 100%;
+}
+
+button {
+    padding: 10px 20px;
+    border: none;
+    border-radius: 5px;
+    background-color: #28a745;
+    color: white;
+    cursor: pointer;
+    transition: background 0.3s ease;
+}
+
+button:hover {
+    background-color: #218838;
+}
+
+table {
+    width: 100%;
+    border-collapse: collapse;
+    margin-top: 20px;
+    opacity: 0.8;
+    background: #fbf3dc;
+    border-radius: 8px;
+    overflow: hidden;
+    box-shadow: 0 4px 6px rgba(0, 0, 0, 0.1);
+}
+
+table th, table td {
+    border: 1px solid #ddd;
+    padding: 10px;
+    text-align: center;
+}
+
+table th {
+    opacity: 0.8;
+    background-color: #fbf3dc;
+    color: #333;
+}
+
+.btn-container button {
+    margin: 0 5px;
+}
+
+.btn-update {
+    background-color: #007bff;
+}
+
+.btn-update:hover {
+    background-color: #0056b3;
+}
+
+.btn-delete {
+    background-color: #dc3545;
+}
+
+.btn-delete:hover {
+    background-color: #c82333;
+}

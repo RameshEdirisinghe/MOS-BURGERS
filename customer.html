@@ -1,0 +1,35 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Customer Management</title>
+    <link rel="stylesheet" href="css/customer.css">
+</head>
+<body>
+    <h1>Customer Management</h1>
+    <div class="form-container">
+        <input type="text" id="customer-name" placeholder="Enter Customer Name">
+        <input type="text" id="customer-phone" placeholder="Enter Phone Number">
+        <input type="date" id="register-date">
+        <button id="add-customer-btn">Add Customer</button>
+    </div>
+
+    <table id="customer-table">
+        <thead>
+            <tr>
+                <th>#</th>
+                <th>Name</th>
+                <th>Phone Number</th>
+                <th>Register Date</th>
+                <th>Actions</th>
+            </tr>
+        </thead>
+        <tbody>
+            <!-- Rows will be dynamically added here -->
+        </tbody>
+    </table>
+
+    <script src="Js/customer.js"></script>
+</body>
+</html>
