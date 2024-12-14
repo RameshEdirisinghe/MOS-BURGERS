@@ -39,8 +39,11 @@ Here are some screenshots of the **MOS Burger** system in action:
 ![Home Page Screenshot](hm.png)  
 *Home Page*
 
-![Order Management Screenshot](images/order-management.png)  
+![Order Management Screenshot](order.png)  
 *Order Management Page*
+
+![Customer Management Screenshot](customer.png)  
+*Customer Management Page*
 
 ## **Technologies Used**
 - **JavaScript**: Main programming language for dynamic content and CRUD operations.
