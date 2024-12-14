@@ -38,6 +38,7 @@
     box-sizing: inherit;
   }
   html, body {
+    
     margin: 0;
     width: 100%;
     color: hsl(var(--text-primary));
@@ -634,7 +635,7 @@ section {
   display: flex;
   width: 1000px;
   height: 900px;
-  background-color: #f9f6eb;
+  background-color: #f5f2e2;
  }
  .row{
   
@@ -642,5 +643,191 @@ section {
   margin-left: 5px;
  }
 
- 
- 
+ .cartCard {
+  width: 330px;
+  height: 80px;
+  border-radius: 8px;
+  box-sizing: border-box;
+  padding: 10px 15px;
+  background-color: rgba(0, 0, 0, 0.362);
+  box-shadow: rgba(149, 157, 165, 0.2) 0px 8px 24px;
+  position: relative;
+  overflow: hidden;
+  display: flex;
+  align-items: center;
+  justify-content: space-around;
+  gap: 15px;
+}
+.wave {
+  position: absolute;
+  transform: rotate(90deg);
+  left: -31px;
+  top: 32px;
+  width: 80px;
+  fill: #f5f2e2;
+}
+.icon-container {
+  width: 35px;
+  height: 35px;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  background-color: #ffcaa6;
+  border-radius: 50%;
+  margin-left: 8px;
+}
+.icon {
+  width: 35px;
+  height: 35px;
+  border-radius: 50%;
+}
+.message-text-container {
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: flex-start;
+  flex-grow: 1;
+}
+.message-text,
+.sub-text {
+  margin: 0;
+  cursor: default;
+}
+.message-text {
+  color: #000000;
+  font-size: 17px;
+  font-weight: 700;
+}
+.sub-text {
+  font-size: 14px;
+  color: #555;
+}
+.cross-icon {
+  width: 18px;
+  height: 18px;
+  color: #555;
+  cursor: pointer;
+}
+
+ /* ---------------------------- */
+ .cart-container {
+  box-shadow: rgba(0, 0, 0, 0.24) 0px 3px 8px;
+  height: 850px;
+  margin: 25px 25px 25px 0px;
+  border-radius: 10px;
+  background-image: linear-gradient(to top, #d5d4d0 0%, #d5d4d0 1%, #eeeeec 31%, #efeeec 75%, #e9e9e7 100%);
+  padding: 20px;
+}
+
+.cart {
+  height: 100vh;
+}
+
+.check-out p {
+  font-weight: bold;
+  border-bottom: 1px solid rgb(200, 200, 200);
+  padding: 0px 10px 10px 10px;
+}
+
+.check-out span {
+  font-weight: 100;
+}
+
+.buttons {
+  display: flex;
+  justify-content: space-around;
+}
+
+.list-group-item {
+  display: flex;
+  justify-content: space-between;
+  text-align: center;
+  background-image: linear-gradient(to right, #868f96 0%, #9fa6a9 100%);
+  color: rgb(255, 255, 255);
+  border: none;
+  border-radius: 5px;
+  margin: 3px;
+  box-shadow: rgba(99, 99, 99, 0.2) 0px 2px 8px 0px;
+}
+
+.list-group-item div {
+  display: flex;
+  justify-content: space-around;
+  align-items: center;
+}
+
+.list-group-item div button {
+  width: 30px;
+  height: 30px;
+  border: none;
+  background-color: rgb(100, 100, 100);
+  color: rgb(255, 255, 255);
+}
+
+/* Footer Bar - Matching Color Palette */
+.footer-bar {
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  width: 100%;
+  background-color: #f5f2e2; /* Lighter than the cart color (#f9f6eb) */
+  border-top: 1px solid hsl(256, 12%, 30%); /* Slightly darker border for separation */
+  display: flex;
+  justify-content: space-around; /* Space between elements */
+  align-items: center;
+  padding: 10px 20px;
+  box-shadow: 0 -2px 5px rgba(0, 0, 0, 0.1); /* Subtle shadow */
+  z-index: 1000;
+  flex-wrap: wrap; /* Makes it responsive */
+}
+
+.total-price,
+.received-amount,
+.change-amount {
+  font-size: 16px;
+  font-weight: bold;
+  color: hsl(256, 12%, 12%); /* Matches the overall dark theme text color */
+  margin-right: 20px; /* Space between sections */
+}
+
+.received-amount input {
+  padding: 5px;
+  font-size: 16px;
+  width: 120px;
+  border: 1px solid hsl(256, 12%, 30%);
+  border-radius: 5px;
+  background-color: #fbf3dc; /* Matches the cards' background */
+  color: hsl(256, 12%, 12%);
+}
+
+.print-bill-button {
+  background-color: #8bc34a; /* Dark footer theme color */
+  color: #f9f6eb; /* Light text for contrast */
+  font-weight: bolder;
+  padding: 10px 20px;
+  border: none;
+  border-radius: 5px;
+  cursor: pointer;
+  font-size: 16px;
+  transition: background-color 0.3s;
+}
+
+.print-bill-button:hover {
+  background-color: #7fee00; /* Slightly lighter for hover effect */
+}
+
+/* Responsive Design */
+@media (max-width: 600px) {
+  .footer-bar {
+      flex-direction: column;
+      align-items: flex-start;
+  }
+
+  .total-price,
+  .received-amount,
+  .change-amount,
+  .print-bill-button {
+      margin-bottom: 10px;
+  }
+}
+
