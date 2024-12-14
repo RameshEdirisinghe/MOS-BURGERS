@@ -1,0 +1,191 @@
+/* Global Styles */
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+body {
+    font-family: 'Arial', sans-serif;
+    background-color: hsl(256, 12%, 12%);
+   
+    padding: 20px;
+}
+
+header {
+    text-align: center;
+    background-color: #fbf3dc;
+    color: rgb(201, 91, 91);
+    padding: 20px;
+    border-radius: 8px;
+}
+
+section {
+    margin-top: 30px;
+    color: #fff;
+    background-color: hsl(256, 12%, 12%);
+    padding: 20px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+}
+
+h1 {
+    font-size: 2.5em;
+}
+
+h3 {
+    font-size: 1.5em;
+    color: #333;
+    margin-bottom: 15px;
+}
+input[type="text"] {
+    background-color: #fbf3dc;
+    color:rgb(160, 44, 44) ;
+}
+input[type="number"] {
+    background-color: #fbf3dc;
+    color:rgb(160, 44, 44) ;
+}
+input[type="file"] {
+    background-color: #fbf3dc;
+    color:rgb(160, 44, 44)  ;
+}
+
+.form-container {
+    display: flex;
+    justify-content: space-between;
+    margin-bottom: 20px;
+}
+
+form input {
+    padding: 12px;
+    width: 45%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+}
+
+form button {
+    padding: 12px;
+    background-color: #4CAF50;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+form button:hover {
+    background-color: #45a049;
+}
+
+.search-container {
+    display: flex;
+    justify-content:left;
+    
+}
+
+#search-bar {
+    padding: 12px;
+    width: 70%;
+    border: 1px solid #ddd;
+    border-radius: 8px;
+    font-size: 1rem;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.05);
+    transition: width 0.3s;
+}
+
+#search-bar:focus {
+    width: 80%;
+}
+
+#search-btn {
+    margin-left: 10px;
+    padding: 12px 20px;
+    background-color: #3498db;
+    color: white;
+    border: none;
+    border-radius: 8px;
+    cursor: pointer;
+    font-size: 1rem;
+    transition: background-color 0.3s;
+}
+
+#search-btn:hover {
+    background-color: #2980b9;
+}
+
+#items-list {
+    margin-top: 20px;
+}
+
+.card-container {
+    display: grid;
+    grid-template-columns: repeat(auto-fill, minmax(250px, 1fr));
+    gap: 20px;
+}
+
+.card {
+    background-color: #fbf3dc;
+    color: #333;
+    padding: 15px;
+    border-radius: 8px;
+    box-shadow: 0 4px 8px rgba(0, 0, 0, 0.1);
+    transition: transform 0.3s;
+    text-align: center;
+}
+
+.card:hover {
+    transform: scale(1.05);
+}
+
+.card img {
+    width: 100%;
+    height: 200px;
+    object-fit: cover;
+    border-radius: 8px;
+    margin-bottom: 10px;
+}
+
+.card button {
+    padding: 8px 15px;
+    font-size: 1rem;
+    color: rgb(255, 255, 255);
+    border: none;
+    border-radius: 5px;
+    cursor: pointer;
+    transition: background-color 0.3s;
+}
+
+button.delete {
+    background-color: #e74c3c;
+}
+
+button.delete:hover {
+    background-color: #c0392b;
+}
+
+button.update {
+    background-color: #3498db;
+}
+
+button.update:hover {
+    background-color: #2980b9;
+}
+
+footer {
+    text-align: center;
+    background-color: #4CAF50;
+    color: white;
+    padding: 10px;
+    border-radius: 8px;
+    margin-top: 30px;
+    font-size: 1rem;
+}
+
+footer p {
+    margin: 0;
+}
+
+

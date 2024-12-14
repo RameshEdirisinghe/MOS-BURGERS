@@ -1,0 +1,44 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Burger Items Management</title>
+    <link rel="stylesheet" href="css/items.css">
+</head>
+<body>
+    
+    <header>
+        <h1>Items Management</h1>
+        
+    </header>
+
+    <section id="item-management">
+        <div class="form-container">
+            <form id="item-form" enctype="multipart/form-data">
+                <input type="text" id="item-name" placeholder="Enter Burger Name" required />
+                <input type="number" id="item-price" placeholder="Enter Price (Rs.)" required />
+                <input type="text" id="item-dis" placeholder="Enter Burger Description" required />
+                <input type="file" id="item-image" accept="image/*" required />
+                
+                <button type="submit">Add Item</button>
+            </form>
+        </div>
+
+        <div class="search-container">
+            <input type="text" id="search-bar" placeholder="Search for burgers..." />
+            <button id="search-btn">Search</button>
+        </div>
+
+        <div id="items-list">
+          
+            <div id="item-list" class="card-container">
+                
+            </div>
+        </div>
+    </section>
+
+
+    <script src="Js/items.js"></script>
+</body>
+</html>
