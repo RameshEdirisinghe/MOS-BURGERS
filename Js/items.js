@@ -105,14 +105,6 @@ let allmeals = [{
 }]
 
 
-
-
-
-
-
-
-
-
 document.addEventListener("DOMContentLoaded", function() {
     const itemForm = document.getElementById('item-form');
     const itemNameInput = document.getElementById('item-name');
@@ -140,10 +132,7 @@ document.addEventListener("DOMContentLoaded", function() {
             itemList.appendChild(card);
         });
     }
-    
-    
 
-    // Event listener for form submission (Add Item)
     itemForm.addEventListener('submit', function(e) {
         e.preventDefault();
     
@@ -158,39 +147,36 @@ document.addEventListener("DOMContentLoaded", function() {
                 const newItem = {
                     name: name,
                     price: price,
-                    img: reader.result // Use 'img' for consistency
+                    img: reader.result 
                 };
-                allmeals.push(newItem); // Add to allmeals array
+                allmeals.push(newItem); 
                 itemNameInput.value = '';
                 itemPriceInput.value = '';
                 itemImageInput.value = '';
-                renderItems(allmeals); // Re-render all items
+                renderItems(allmeals); 
             };
     
-            reader.readAsDataURL(imageFile); // Convert image to Base64
+            reader.readAsDataURL(imageFile); 
         } else {
             alert("Please enter valid data.");
         }
     });
     
 
-    // Function to delete an item
     window.deleteItem = function(index) {
         allmeals.splice(index, 1);
-        renderItems(allmeals); // Re-render items after deletion
+        renderItems(allmeals); 
     }
 
-    // Function to edit an item
+    
     window.editItem = function(index) {
         const item = allmeals[index];
         itemNameInput.value = item.name;
         itemPriceInput.value = item.price;
 
-        // Change the submit button to an "Update" button
         const submitButton = itemForm.querySelector('button');
         submitButton.textContent = 'Update Item';
 
-        // When the form is submitted again, update the item instead of adding a new one
         itemForm.onsubmit = function(e) {
             e.preventDefault();
 
@@ -201,28 +187,26 @@ document.addEventListener("DOMContentLoaded", function() {
                 burgerItems[index] = { name: updatedName, price: updatedPrice, image: item.image };
                 itemNameInput.value = '';
                 itemPriceInput.value = '';
-                submitButton.textContent = 'Add Item'; // Reset button text
-                itemForm.onsubmit = addItem; // Reset form handler to addItem
-                renderItems(allmeals); // Re-render items
+                submitButton.textContent = 'Add Item'; 
+                itemForm.onsubmit = addItem; 
+                renderItems(allmeals); 
             } else {
                 alert("Please enter valid data.");
             }
         };
     }
 
-    // Event listener for search button click
+
     searchBtn.addEventListener('click', function() {
         const searchTerm = searchBar.value.toLowerCase();
         const filteredItems = burgerItems.filter(item => 
             item.name.toLowerCase().includes(searchTerm)
         );
-        renderItems(filteredItems); // Render filtered items based on search term
+        renderItems(filteredItems); 
     });
 
-    // Initial rendering of all items
     renderItems(allmeals);
 
-    // Default function for adding a new item
     function addItem(e) {
         e.preventDefault();
 
@@ -243,7 +227,7 @@ document.addEventListener("DOMContentLoaded", function() {
                 itemNameInput.value = '';
                 itemPriceInput.value = '';
                 itemImageInput.value = '';
-                renderItems(burgerItems); // Render all items
+                renderItems(burgerItems); 
             };
 
             reader.readAsDataURL(image);
