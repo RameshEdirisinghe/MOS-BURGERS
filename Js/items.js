@@ -1,4 +1,4 @@
-let allmeals = [{
+let allMeals = [{
     img: "assets/delicious-burgers-with-bright-lights.jpg",
     name: "BaconCheeseBurger",
     Id: "001",
@@ -105,136 +105,158 @@ let allmeals = [{
 }]
 
 
+
 document.addEventListener("DOMContentLoaded", function() {
+
     const itemForm = document.getElementById('item-form');
     const itemNameInput = document.getElementById('item-name');
     const itemPriceInput = document.getElementById('item-price');
+    const itemDescriptionInput = document.getElementById('item-dis');
     const itemImageInput = document.getElementById('item-image');
     const itemList = document.getElementById('item-list');
     const searchBar = document.getElementById('search-bar');
     const searchBtn = document.getElementById('search-btn');
 
+    let isEditing = false;
+    let editIndex = null;
 
-    function renderItems(itemsToDisplay) {
-        itemList.innerHTML = '';
-        itemsToDisplay.forEach((item, index) => {
+  
+    function renderItems(items) {
+        itemList.innerHTML = ''; 
+
+        items.forEach((item, index) => {
+            
             const card = document.createElement('div');
             card.classList.add('card');
+
+  
             card.innerHTML = `
-                <img src="${item.img}" alt="${item.name}">
+                <img src="${item.img}" alt="${item.name}" class="item-image">
                 <h4>${item.name}</h4>
+                <p>${item.description}</p>
                 <p>Rs. ${item.price}.00</p>
-                <div>
-                    <button class="update" onclick="editItem(${index})">Update</button>
-                    <button class="delete" onclick="deleteItem(${index})">Delete</button>
+                <div class="button-group">
+                    <button class="update-btn" data-index="${index}">Update</button>
+                    <button class="delete-btn" data-index="${index}">Delete</button>
                 </div>
             `;
+
+
             itemList.appendChild(card);
         });
     }
 
-    itemForm.addEventListener('submit', function(e) {
-        e.preventDefault();
-    
-        const name = itemNameInput.value.trim();
-        const price = parseFloat(itemPriceInput.value.trim());
-        const imageFile = itemImageInput.files[0];
-    
-        if (name && !isNaN(price) && price > 0 && imageFile) {
-            const reader = new FileReader();
-    
-            reader.onloadend = function() {
-                const newItem = {
-                    name: name,
-                    price: price,
-                    img: reader.result 
-                };
-                allmeals.push(newItem); 
-                itemNameInput.value = '';
-                itemPriceInput.value = '';
-                itemImageInput.value = '';
-                renderItems(allmeals); 
-            };
-    
-            reader.readAsDataURL(imageFile); 
-        } else {
-            alert("Please enter valid data.");
-        }
-    });
-    
 
-    window.deleteItem = function(index) {
-        allmeals.splice(index, 1);
-        renderItems(allmeals); 
+    function resetForm() {
+        itemForm.reset();
+        isEditing = false;
+        editIndex = null;
+        itemForm.querySelector('button').textContent = 'Add Item';
     }
 
-    
-    window.editItem = function(index) {
-        const item = allmeals[index];
+ 
+    function generateId() {
+        return `ID_${Date.now()}`;
+    }
+
+ 
+    itemForm.addEventListener('submit', function(e) {
+        e.preventDefault();
+
+        const name = itemNameInput.value.trim();
+        const price = parseFloat(itemPriceInput.value.trim());
+        const description = itemDescriptionInput.value.trim();
+        const imageFile = itemImageInput.files[0];
+
+        if (name === '' || isNaN(price) || price <= 0 || ( !isEditing && !imageFile)) {
+            alert("Please enter valid data.");
+            return;
+        }
+
+       
+        function processItem(imgSrc) {
+            if (isEditing) {
+
+                allMeals[editIndex].name = name;
+                allMeals[editIndex].price = price;
+                allMeals[editIndex].description = description;
+                if (imgSrc) {
+                    allMeals[editIndex].img = imgSrc;
+                }
+            } else {
+
+                const newItem = {
+                    img: imgSrc,
+                    name: name,
+                    id: generateId(),
+                    description: description,
+                    price: price
+                };
+                allMeals.push(newItem);
+            }
+            renderItems(allMeals);
+            resetForm();
+        }
+
+
+        if (imageFile) {
+            const reader = new FileReader();
+            reader.onloadend = function() {
+                processItem(reader.result);
+            };
+            reader.readAsDataURL(imageFile);
+        } else {
+            processItem(null);
+        }
+    });
+
+
+    itemList.addEventListener('click', function(e) {
+        if (e.target.classList.contains('delete-btn')) {
+            const index = e.target.getAttribute('data-index');
+            deleteItem(index);
+        }
+
+        if (e.target.classList.contains('update-btn')) {
+            const index = e.target.getAttribute('data-index');
+            editItem(index);
+        }
+    });
+
+
+    function deleteItem(index) {
+        if (confirm("Are you sure you want to delete this item?")) {
+            allMeals.splice(index, 1);
+            renderItems(allMeals);
+            if (isEditing && editIndex == index) {
+                resetForm();
+            }
+        }
+    }
+
+
+    function editItem(index) {
+        const item = allMeals[index];
         itemNameInput.value = item.name;
         itemPriceInput.value = item.price;
+        itemDescriptionInput.value = item.description;
+   
 
-        const submitButton = itemForm.querySelector('button');
-        submitButton.textContent = 'Update Item';
-
-        itemForm.onsubmit = function(e) {
-            e.preventDefault();
-
-            const updatedName = itemNameInput.value.trim();
-            const updatedPrice = parseFloat(itemPriceInput.value.trim());
-
-            if (updatedName && !isNaN(updatedPrice) && updatedPrice > 0) {
-                burgerItems[index] = { name: updatedName, price: updatedPrice, image: item.image };
-                itemNameInput.value = '';
-                itemPriceInput.value = '';
-                submitButton.textContent = 'Add Item'; 
-                itemForm.onsubmit = addItem; 
-                renderItems(allmeals); 
-            } else {
-                alert("Please enter valid data.");
-            }
-        };
+        isEditing = true;
+        editIndex = index;
+        itemForm.querySelector('button').textContent = 'Update Item';
     }
 
 
     searchBtn.addEventListener('click', function() {
         const searchTerm = searchBar.value.toLowerCase();
-        const filteredItems = allmeals.filter(item => 
+        const filteredItems = allMeals.filter(item => 
             item.name.toLowerCase().includes(searchTerm)
         );
-        renderItems(filteredItems); 
+        renderItems(filteredItems);
     });
 
-    renderItems(allmeals);
-
-    function addItem(e) {
-        e.preventDefault();
-
-        const name = itemNameInput.value.trim();
-        const price = parseFloat(itemPriceInput.value.trim());
-        const image = itemImageInput.files[0];
-
-        if (name && !isNaN(price) && price > 0 && image) {
-            const reader = new FileReader();
-
-            reader.onloadend = function() {
-                const newItem = { 
-                    name: name,
-                    price: price,
-                    image: reader.result
-                };
-                allmeals.push(newItem);
-                itemNameInput.value = '';
-                itemPriceInput.value = '';
-                itemImageInput.value = '';
-                renderItems(burgerItems); 
-            };
-
-            reader.readAsDataURL(image);
-        } else {
-            alert("Please enter valid data.");
-        }
-    }
+    renderItems(allMeals);
 });
 
 

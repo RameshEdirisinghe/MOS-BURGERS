@@ -190,4 +190,18 @@ footer p {
     margin: 0;
 }
 
+.update-btn{
+    background-color: #3498db;
+}
 
+.update-btn :hover {
+    background-color: #2980b9;
+}
+
+.delete-btn {
+    background-color: #e74c3c;
+}
+
+.delete-btn:hover {
+    background-color: #c0392b;
+}
